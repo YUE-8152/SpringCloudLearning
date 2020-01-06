@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
@@ -66,11 +67,36 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <!-- 解析application.yml中info相关信息，注册中心服务信息 -->
+    <!-- 主要：springboot2.0版本，yml中读取pom文件中的配置信息需要用@符，2.0以前版本则用$符 -->
+    <build>
+        <finalName>SpringCloudLearning</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
     <modules>
         <module>spring-cloud-learning-common</module>
-        <module>spring-cloud-learning-student-service-8001</module>
+        <module>spring-cloud-learning-student-service</module>
         <module>spring-cloud-learning-student-consumer</module>
+        <module>spring-cloud-learning-eureka</module>
     </modules>
 
 

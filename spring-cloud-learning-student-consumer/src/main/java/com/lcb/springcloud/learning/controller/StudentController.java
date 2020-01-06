@@ -30,4 +30,9 @@ public class StudentController {
         return restTemplate.postForObject(REST_URL_PREFIX + "/student/add", student, String.class);
     }
 
+    @GetMapping("/consumer/discovery")
+    public Object getDiscoveryInfo() {
+        return restTemplate.getForObject(REST_URL_PREFIX + "/student/discovery", Object.class);
+    }
+
 }
