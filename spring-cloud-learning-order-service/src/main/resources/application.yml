@@ -1,7 +1,6 @@
 server:
   port: 8002
 
-
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
   type-aliases-package: com.lcb.springcloud.learning.po     # 所有po别名类所在包

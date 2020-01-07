@@ -110,6 +110,16 @@ public class Student {
         this.updateUser = updateUser;
     }
 
+    public Student(String name, Integer age, Integer sex, String address, Date birthDay, String createUser,String updateUser) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.address = address;
+        this.birthDay = birthDay;
+        this.createUser = createUser;
+        this.updateUser = updateUser;
+    }
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Student{");

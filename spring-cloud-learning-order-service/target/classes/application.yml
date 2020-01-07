@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
@@ -9,11 +9,11 @@ mybatis:
 
 spring:
   application:
-    name: student-service-8001                              #服务注册到Eureka中的名称
+    name: order-service-8002                              #服务注册到Eureka中的名称
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://localhost:3306/mydb                   # 数据库名称
+    url: jdbc:mysql://localhost:3306/mytest                 # 数据库名称
     username: root
     password: 123456
     dbcp2:
@@ -28,12 +28,12 @@ eureka:
       defaultZone: http://localhost:7001/eureka
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: student-service
+    instance-id: order-service
     prefer-ip-address: true     #访问路径可以显示IP地址
 
 info:
-  app.name: StudentService
+  app.name: OrderService
   company.name: www.lcb.com
   company.address: www.lcb.com
-  build.artifactId: spring-cloud-learning-student-service
+  build.artifactId: spring-cloud-learning-order-service
   build.version: 1.0-SNAPSHOT

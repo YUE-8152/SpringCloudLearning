@@ -15,6 +15,7 @@
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
         <boot.version>2.1.4.RELEASE</boot.version>
+        <fastjson.version>1.2.56</fastjson.version>
         <cloud.version>Greenwich.RELEASE</cloud.version>
     </properties>
 
@@ -44,6 +45,12 @@
                 <artifactId>druid</artifactId>
                 <version>1.1.9</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
