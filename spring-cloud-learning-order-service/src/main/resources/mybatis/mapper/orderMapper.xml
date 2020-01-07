@@ -1,0 +1,29 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lcb.springcloud.learning.dao.OrderDao">
+    <resultMap id="BaseResultMap" type="com.lcb.springcloud.learning.po.Order">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="orderName" column="order_name" jdbcType="VARCHAR"/>
+        <result property="orderCode" column="order_code" jdbcType="VARCHAR"/>
+        <result property="orderTime" column="order_time" jdbcType="DATE"/>
+        <result property="createTime" column="create_time" jdbcType="DATE"/>
+        <result property="createUser" column="create_user" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="update_time" jdbcType="DATE"/>
+        <result property="updateUser" column="update_user" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="queryById" parameterType="integer" resultMap="BaseResultMap">
+        select id,order_name,order_code,order_time,create_time,create_user,update_time,update_user
+          from `order`
+         where id=#{id};
+    </select>
+
+    <select id="queryAll" resultType="com.lcb.springcloud.learning.po.Order">
+        select id,order_name,order_code,order_time,create_time,create_user,update_time,update_user
+          from `order`;
+    </select>
+
+    <insert id="addOrder" parameterType="com.lcb.springcloud.learning.po.Order">
+        insert into `order`(order_name,order_code,order_time,create_time,create_user,update_time,update_user)
+        values (#{orderName},#{orderCode},#{orderTime},now(),#{createUser},now(),#{updateUser});
+    </insert>
+</mapper>

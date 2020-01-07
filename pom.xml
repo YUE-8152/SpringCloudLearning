@@ -97,6 +97,7 @@
         <module>spring-cloud-learning-student-service</module>
         <module>spring-cloud-learning-student-consumer</module>
         <module>spring-cloud-learning-eureka</module>
+        <module>spring-cloud-learning-order-service</module>
     </modules>
 
 
