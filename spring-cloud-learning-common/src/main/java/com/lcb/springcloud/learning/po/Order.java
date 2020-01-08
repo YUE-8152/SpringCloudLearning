@@ -1,19 +1,17 @@
 package com.lcb.springcloud.learning.po;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Order {
+public class Order implements Serializable {
     private Integer id;
     private String orderName;
     private String orderCode;
     private Date orderTime;
-    private Date createTime;
     private String createUser;
-    private Date updateTime;
+    private Date createTime;
     private String updateUser;
-
-    public Order() {
-    }
+    private Date updateTime;
 
     public Integer getId() {
         return id;
@@ -47,14 +45,6 @@ public class Order {
         this.orderTime = orderTime;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
     public String getCreateUser() {
         return createUser;
     }
@@ -63,12 +53,12 @@ public class Order {
         this.createUser = createUser;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getUpdateUser() {
@@ -79,15 +69,23 @@ public class Order {
         this.updateUser = updateUser;
     }
 
-    public Order(Integer id, String orderName, String orderCode, Date orderTime, Date createTime, String createUser, Date updateTime, String updateUser) {
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Order(Integer id, String orderName, String orderCode, Date orderTime, String createUser, Date createTime, String updateUser, Date updateTime) {
         this.id = id;
         this.orderName = orderName;
         this.orderCode = orderCode;
         this.orderTime = orderTime;
-        this.createTime = createTime;
         this.createUser = createUser;
-        this.updateTime = updateTime;
+        this.createTime = createTime;
         this.updateUser = updateUser;
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -97,10 +95,10 @@ public class Order {
         sb.append(", orderName='").append(orderName).append('\'');
         sb.append(", orderCode='").append(orderCode).append('\'');
         sb.append(", orderTime=").append(orderTime);
-        sb.append(", createTime=").append(createTime);
         sb.append(", createUser='").append(createUser).append('\'');
-        sb.append(", updateTime=").append(updateTime);
+        sb.append(", createTime=").append(createTime);
         sb.append(", updateUser='").append(updateUser).append('\'');
+        sb.append(", updateTime=").append(updateTime);
         sb.append('}');
         return sb.toString();
     }

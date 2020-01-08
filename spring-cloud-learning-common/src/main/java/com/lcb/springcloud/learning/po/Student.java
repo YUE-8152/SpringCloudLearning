@@ -1,18 +1,22 @@
 package com.lcb.springcloud.learning.po;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Student {
+public class Student implements Serializable {
     private Integer id;
     private String name;
     private Integer age;
     private Integer sex;
     private String address;
     private Date birthDay;
-    private Date createTime;
     private String createUser;
-    private Date updateTime;
+    private Date createTime;
     private String updateUser;
+    private Date updateTime;
+
+    public Student() {
+    }
 
     public Integer getId() {
         return id;
@@ -62,14 +66,6 @@ public class Student {
         this.birthDay = birthDay;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
     public String getCreateUser() {
         return createUser;
     }
@@ -78,12 +74,12 @@ public class Student {
         this.createUser = createUser;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getUpdateUser() {
@@ -94,30 +90,38 @@ public class Student {
         this.updateUser = updateUser;
     }
 
-    public Student() {
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public Student(Integer id, String name, Integer age, Integer sex, String address, Date birthDay, Date createTime, String createUser, Date updateTime, String updateUser) {
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Student(String name, Integer age, Integer sex, String address, Date birthDay, String createUser, String updateUser) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.address = address;
         this.birthDay = birthDay;
-        this.createTime = createTime;
         this.createUser = createUser;
-        this.updateTime = updateTime;
+        this.createTime = createTime;
         this.updateUser = updateUser;
+        this.updateTime = updateTime;
     }
 
-    public Student(String name, Integer age, Integer sex, String address, Date birthDay, String createUser,String updateUser) {
+    public Student(Integer id, String name, Integer age, Integer sex, String address, Date birthDay, String createUser, Date createTime, String updateUser, Date updateTime) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.address = address;
         this.birthDay = birthDay;
         this.createUser = createUser;
+        this.createTime = createTime;
         this.updateUser = updateUser;
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -129,10 +133,10 @@ public class Student {
         sb.append(", sex=").append(sex);
         sb.append(", address='").append(address).append('\'');
         sb.append(", birthDay=").append(birthDay);
-        sb.append(", createTime=").append(createTime);
         sb.append(", createUser='").append(createUser).append('\'');
-        sb.append(", updateTime=").append(updateTime);
+        sb.append(", createTime=").append(createTime);
         sb.append(", updateUser='").append(updateUser).append('\'');
+        sb.append(", updateTime=").append(updateTime);
         sb.append('}');
         return sb.toString();
     }

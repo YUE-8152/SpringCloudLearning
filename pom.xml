@@ -16,6 +16,7 @@
         <lombok.version>1.16.18</lombok.version>
         <boot.version>2.1.4.RELEASE</boot.version>
         <fastjson.version>1.2.56</fastjson.version>
+        <generator.version>1.3.5</generator.version>
         <cloud.version>Greenwich.RELEASE</cloud.version>
     </properties>
 
@@ -50,7 +51,12 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-
+            <!-- mybatis代码自动生成  -->
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${generator.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -93,6 +99,17 @@
                     <delimiters>
                         <delimiter>@</delimiter>
                     </delimiters>
+                </configuration>
+            </plugin>
+            <!-- mybatis代码自动生成  -->
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <configurationFile>${basedir}/src/main/resources/generator/generatorContext.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
                 </configuration>
             </plugin>
         </plugins>
