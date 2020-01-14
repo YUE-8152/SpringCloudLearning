@@ -56,7 +56,7 @@
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
                 <version>${generator.version}</version>
-            </dependency>
+            </dependency>            
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -95,11 +95,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.1.0</version>
+                <!-- 自定义重命名mybatis自动生成文件插件  -->
                 <configuration>
                     <delimiters>
                         <delimiter>@</delimiter>
                     </delimiters>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator.rename</groupId>
+                <artifactId>mybatis-generator-rename</artifactId>
+                <version>1.0.0</version>
             </plugin>
             <!-- mybatis代码自动生成  -->
             <plugin>
@@ -114,8 +120,6 @@
             </plugin>
         </plugins>
     </build>
-
-
     <modules>
         <module>spring-cloud-learning-common</module>
         <module>spring-cloud-learning-student-service</module>

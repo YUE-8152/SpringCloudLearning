@@ -13,6 +13,9 @@ public class Order implements Serializable {
     private String updateUser;
     private Date updateTime;
 
+    public Order() {
+    }
+
     public Integer getId() {
         return id;
     }

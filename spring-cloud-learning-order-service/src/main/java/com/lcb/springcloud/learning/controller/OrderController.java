@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/order")
 public class OrderController {
     @Autowired
     private OrderService orderService;
@@ -17,7 +18,7 @@ public class OrderController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @PostMapping("/order/add")
+    @PostMapping("/add")
     public String addStudent(@RequestBody Order order) {
         if (orderService.addOrder(order) != 1) {
             return "添加失败！";
@@ -25,17 +26,17 @@ public class OrderController {
         return "添加成功！";
     }
 
-    @GetMapping("/order/get/{id}")
+    @GetMapping("/get/{id}")
     public Order queryById(@PathVariable(name = "id") Integer id) {
         return orderService.queryById(id);
     }
 
-    @GetMapping("/order/gets")
+    @GetMapping("/gets")
     public List<Order> queryAll() {
         return orderService.queryAll();
     }
 
-    @GetMapping("/order/discovery")
+    @GetMapping("/discovery")
     public Object getDiscoveryInfo() {
         List<ServiceInstance> instances = discoveryClient.getInstances("ORDER-SERVICE-8002");
         for (ServiceInstance ins : instances) {

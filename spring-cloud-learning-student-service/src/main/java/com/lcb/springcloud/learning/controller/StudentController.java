@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/student")
 public class StudentController {
 
     @Autowired
@@ -18,7 +19,7 @@ public class StudentController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @PostMapping("/student/add")
+    @PostMapping("/add")
     public String addStudent(@RequestBody Student student) {
         if (!studentService.addStudent(student)) {
             return "添加失败！";
@@ -26,17 +27,17 @@ public class StudentController {
         return "添加成功！";
     }
 
-    @GetMapping("/student/get/{id}")
+    @GetMapping("/get/{id}")
     public Student queryById(@PathVariable(name = "id") Integer id) {
         return studentService.queryById(id);
     }
 
-    @GetMapping("/student/gets")
+    @GetMapping("/gets")
     public List<Student> queryAll() {
         return studentService.queryAll();
     }
 
-    @GetMapping("/student/discovery")
+    @GetMapping("/discovery")
     public Object getDiscoveryInfo() {
         List<ServiceInstance> instances = discoveryClient.getInstances("STUDENT-SERVICE-8001");
         for (ServiceInstance ins : instances) {
