@@ -1,6 +1,7 @@
 package com.lcb.springcloud.learning.controller;
 
 import com.lcb.springcloud.learning.po.Student;
+import com.lcb.springcloud.learning.response.ResponseResult;
 import com.lcb.springcloud.learning.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -20,21 +21,21 @@ public class StudentController {
     private DiscoveryClient discoveryClient;
 
     @PostMapping("/add")
-    public String addStudent(@RequestBody Student student) {
+    public Object addStudent(@RequestBody Student student) {
         if (!studentService.addStudent(student)) {
-            return "添加失败！";
+            return ResponseResult.fail(1000, "添加失败！");
         }
-        return "添加成功！";
+        return ResponseResult.success();
     }
 
     @GetMapping("/get/{id}")
-    public Student queryById(@PathVariable(name = "id") Integer id) {
-        return studentService.queryById(id);
+    public Object queryById(@PathVariable(name = "id") Integer id) {
+        return ResponseResult.success(studentService.queryById(id));
     }
 
     @GetMapping("/gets")
-    public List<Student> queryAll() {
-        return studentService.queryAll();
+    public Object queryAll() {
+        return ResponseResult.success(studentService.queryAll());
     }
 
     @GetMapping("/discovery")

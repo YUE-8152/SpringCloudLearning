@@ -2,7 +2,6 @@ package com.lcb.springcloud.learning.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.lcb.springcloud.learning.po.Student;
-import net.minidev.json.JSONArray;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
