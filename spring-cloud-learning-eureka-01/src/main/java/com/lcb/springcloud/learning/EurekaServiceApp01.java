@@ -2,12 +2,12 @@ package com.lcb.springcloud.learning;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
-@EnableEurekaClient
-public class StudentConsumerApp {
+@EnableEurekaServer
+public class EurekaServiceApp01 {
     public static void main(String[] args) {
-        SpringApplication.run(StudentConsumerApp.class, args);
+        SpringApplication.run(EurekaServiceApp01.class, args);
     }
 }

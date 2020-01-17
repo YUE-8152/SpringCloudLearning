@@ -81,6 +81,21 @@
             <version>2.1.4.RELEASE</version>
         </dependency>
     </dependencies>
-
+    <!-- 使用spring-boot-maven-plugin打包，不然会报xxx.jar中没有主清单属性 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

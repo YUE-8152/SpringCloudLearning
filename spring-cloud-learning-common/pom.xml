@@ -21,6 +21,7 @@
             <version>${fastjson.version}</version>
         </dependency>
     </dependencies>
-
-
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
 </project>

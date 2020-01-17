@@ -20,6 +20,12 @@ public class StudentController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    /**
+     * 新增
+     *
+     * @param student
+     * @return
+     */
     @PostMapping("/add")
     public Object addStudent(@RequestBody Student student) {
         if (!studentService.addStudent(student)) {
@@ -28,11 +34,22 @@ public class StudentController {
         return ResponseResult.success();
     }
 
+    /**
+     * 根据id查询学生信息
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("/get/{id}")
     public Object queryById(@PathVariable(name = "id") Integer id) {
         return ResponseResult.success(studentService.queryById(id));
     }
 
+    /**
+     * 获取所有学生信息
+     *
+     * @return
+     */
     @GetMapping("/gets")
     public Object queryAll() {
         return ResponseResult.success(studentService.queryAll());

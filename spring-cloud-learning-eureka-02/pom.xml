@@ -9,39 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-cloud-learning-student-consumer</artifactId>
-    <description>学生微服务消费者</description>
-
+    <artifactId>spring-cloud-learning-eureka-02</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>com.lcb.springcloud.learning</groupId>
-            <artifactId>spring-cloud-learning-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.1.4.RELEASE</version>
-        </dependency>
-        <!-- Ribbon相关 -->
+        <!--eureka-server服务端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
             <version>1.4.7.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-ribbon</artifactId>
-            <version>1.4.7.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.1.4.RELEASE</version>
         </dependency>
         <!-- 修改后立即生效，热部署 -->
         <dependency>
@@ -57,8 +31,8 @@
     </dependencies>
     <build>
         <!-- 指定打包后的包名 -->
-        <!--<finalName>${project.artifactId}-${project.version}</finalName>-->
-        <finalName>${project.artifactId}-${project.version}</finalName>
+        <!-- <finalName>${project.artifactId}-${project.version}</finalName> -->
+        <finalName>spring-cloud-learning-eureka-7003</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -73,4 +47,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

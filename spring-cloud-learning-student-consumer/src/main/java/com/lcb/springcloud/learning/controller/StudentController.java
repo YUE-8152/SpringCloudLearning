@@ -11,24 +11,26 @@ import java.util.List;
 @RequestMapping("/consumer")
 public class StudentController {
 
-    private final String REST_URL_PREFIX = "http://localhost:8001";
+    //private final String REST_URL_PREFIX = "http://localhost:8001";
+    //服务名称
+    private final String REST_URL_PREFIX = "http://STUDENT-SERVICE-8001";
 
     @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping("/get/{id}")
-    public Student queryById(@PathVariable(name = "id") Integer id) {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/student/get/" + id, Student.class);
+    public Object queryById(@PathVariable(name = "id") Integer id) {
+        return restTemplate.getForObject(REST_URL_PREFIX + "/student/get/" + id, Object.class);
     }
 
     @GetMapping("/gets")
-    public List<Student> queryAll() {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/student/gets", List.class);
+    public Object queryAll() {
+        return restTemplate.getForObject(REST_URL_PREFIX + "/student/gets", Object.class);
     }
 
     @PostMapping("/add")
-    public String add(@RequestBody Student student) {
-        return restTemplate.postForObject(REST_URL_PREFIX + "/student/add", student, String.class);
+    public Object add(@RequestBody Student student) {
+        return restTemplate.postForObject(REST_URL_PREFIX + "/student/add", student, Object.class);
     }
 
     @GetMapping("/discovery")

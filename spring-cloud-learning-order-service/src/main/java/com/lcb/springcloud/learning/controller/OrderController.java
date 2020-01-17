@@ -26,16 +26,32 @@ public class OrderController {
         return "添加成功！";
     }
 
+    /**
+     * 根据id查询订单
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("/get/{id}")
     public Order queryById(@PathVariable(name = "id") Integer id) {
         return orderService.queryById(id);
     }
 
+    /**
+     * 获取所有订单
+     *
+     * @return
+     */
     @GetMapping("/gets")
     public List<Order> queryAll() {
         return orderService.queryAll();
     }
 
+    /**
+     * 服务信息
+     *
+     * @return
+     */
     @GetMapping("/discovery")
     public Object getDiscoveryInfo() {
         List<ServiceInstance> instances = discoveryClient.getInstances("ORDER-SERVICE-8002");
