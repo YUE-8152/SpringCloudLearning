@@ -127,7 +127,7 @@
         <module>spring-cloud-learning-student-consumer</module>
         <module>spring-cloud-learning-eureka</module>
         <module>spring-cloud-learning-eureka-01</module>
-        <module>spring-cloud-learning-eureka-02</module>
+        <!--<module>spring-cloud-learning-eureka-02</module>-->
         <module>spring-cloud-learning-order-service</module>
         <module>spring-cloud-learning-zuul</module>
     </modules>
