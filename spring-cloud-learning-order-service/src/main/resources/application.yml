@@ -1,6 +1,11 @@
 server:
   port: 8002
 
+#Mybatis 控制台打印SQL语句
+logging:
+  level:
+    com.lcb.springcloud.learning: debug
+
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
   type-aliases-package: com.lcb.springcloud.learning.po     # 所有po别名类所在包
@@ -34,6 +39,7 @@ eureka:
   instance:
     instance-id: order-service
     prefer-ip-address: true     #访问路径可以显示IP地址
+
 
 info:
   app.name: OrderService
