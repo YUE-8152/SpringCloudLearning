@@ -1,7 +1,7 @@
 package com.lcb.springcloud.learning.service.impl;
 
 import com.lcb.springcloud.learning.dao.OrderDao;
-import com.lcb.springcloud.learning.po.Order;
+import com.lcb.springcloud.learning.common.po.Order;
 import com.lcb.springcloud.learning.service.OrderService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;

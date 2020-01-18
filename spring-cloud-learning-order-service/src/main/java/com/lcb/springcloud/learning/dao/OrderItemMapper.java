@@ -1,6 +1,6 @@
 package com.lcb.springcloud.learning.dao;
 
-import com.lcb.springcloud.learning.po.OrderItem;
+import com.lcb.springcloud.learning.common.po.OrderItem;
 
 public interface OrderItemMapper {
     int deleteByPrimaryKey(Integer id);

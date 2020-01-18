@@ -1,6 +1,6 @@
 package com.lcb.springcloud.learning.service;
 
-import com.lcb.springcloud.learning.po.Student;
+import com.lcb.springcloud.learning.common.po.Student;
 
 import java.util.List;
 

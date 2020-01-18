@@ -1,6 +1,6 @@
 package com.lcb.springcloud.learning.controller;
 
-import com.lcb.springcloud.learning.po.Order;
+import com.lcb.springcloud.learning.common.po.Order;
 import com.lcb.springcloud.learning.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;

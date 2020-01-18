@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lcb.springcloud.learning.dao.OrderItemMapper">
-  <resultMap id="BaseResultMap" type="com.lcb.springcloud.learning.po.OrderItem">
+  <resultMap id="BaseResultMap" type="com.lcb.springcloud.learning.common.po.OrderItem">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="item_name" jdbcType="VARCHAR" property="itemName" />
@@ -24,7 +24,7 @@
     delete from order_item
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.lcb.springcloud.learning.po.OrderItem">
+  <insert id="insert" parameterType="com.lcb.springcloud.learning.common.po.OrderItem">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -35,7 +35,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{updateUser,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.lcb.springcloud.learning.po.OrderItem">
+  <insert id="insertSelective" parameterType="com.lcb.springcloud.learning.common.po.OrderItem">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lcb.springcloud.learning.po.OrderItem">
+  <update id="updateByPrimaryKeySelective" parameterType="com.lcb.springcloud.learning.common.po.OrderItem">
     update order_item
     <set>
       <if test="orderId != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lcb.springcloud.learning.po.OrderItem">
+  <update id="updateByPrimaryKey" parameterType="com.lcb.springcloud.learning.common.po.OrderItem">
     update order_item
     set order_id = #{orderId,jdbcType=INTEGER},
       item_name = #{itemName,jdbcType=VARCHAR},

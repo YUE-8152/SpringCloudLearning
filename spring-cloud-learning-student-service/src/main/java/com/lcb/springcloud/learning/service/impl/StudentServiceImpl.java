@@ -1,7 +1,7 @@
 package com.lcb.springcloud.learning.service.impl;
 
 import com.lcb.springcloud.learning.dao.StudentDao;
-import com.lcb.springcloud.learning.po.Student;
+import com.lcb.springcloud.learning.common.po.Student;
 import com.lcb.springcloud.learning.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

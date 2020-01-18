@@ -1,6 +1,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lcb.springcloud.learning.dao.StudentDao">
-    <resultMap id="BaseResultMap" type="com.lcb.springcloud.learning.po.Student">
+    <resultMap id="BaseResultMap" type="com.lcb.springcloud.learning.common.po.Student">
         <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="age" column="age" jdbcType="INTEGER"/>
@@ -19,12 +19,12 @@
          where id=#{id};
     </select>
 
-    <select id="queryAll" resultType="com.lcb.springcloud.learning.po.Student">
+    <select id="queryAll" resultType="com.lcb.springcloud.learning.common.po.Student">
         select id,name,age,sex,address,birth_day,create_time,create_user,update_time,update_user
           from student;
     </select>
 
-    <insert id="addStudent" parameterType="com.lcb.springcloud.learning.po.Student">
+    <insert id="addStudent" parameterType="com.lcb.springcloud.learning.common.po.Student">
         insert into student(name,age,sex,address,birth_day,create_time,create_user,update_time,update_user)
         values (#{name},#{age},#{sex},#{address},#{birthDay},now(),#{createUser},now(),#{updateUser});
     </insert>

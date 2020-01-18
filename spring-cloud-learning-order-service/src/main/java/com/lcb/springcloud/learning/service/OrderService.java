@@ -1,6 +1,6 @@
 package com.lcb.springcloud.learning.service;
 
-import com.lcb.springcloud.learning.po.Order;
+import com.lcb.springcloud.learning.common.po.Order;
 
 import java.util.List;
 

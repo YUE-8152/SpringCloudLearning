@@ -1,6 +1,6 @@
 package com.lcb.springcloud.learning.dao;
 
-import com.lcb.springcloud.learning.po.Order;
+import com.lcb.springcloud.learning.common.po.Order;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

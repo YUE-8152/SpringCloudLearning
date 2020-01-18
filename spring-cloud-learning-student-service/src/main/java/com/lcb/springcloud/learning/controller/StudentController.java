@@ -1,7 +1,7 @@
 package com.lcb.springcloud.learning.controller;
 
-import com.lcb.springcloud.learning.po.Student;
-import com.lcb.springcloud.learning.response.ResponseResult;
+import com.lcb.springcloud.learning.common.po.Student;
+import com.lcb.springcloud.learning.common.response.ResponseResult;
 import com.lcb.springcloud.learning.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;

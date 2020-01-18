@@ -79,6 +79,11 @@
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>1.4.7.RELEASE</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <!-- 解析application.yml中info相关信息，注册中心服务信息 -->
@@ -124,12 +129,13 @@
     <modules>
         <module>spring-cloud-learning-common</module>
         <module>spring-cloud-learning-student-service</module>
-        <module>spring-cloud-learning-student-consumer</module>
+        <module>spring-cloud-learning-student-consumer-ribbon</module>
         <module>spring-cloud-learning-eureka</module>
         <module>spring-cloud-learning-eureka-01</module>
         <!--<module>spring-cloud-learning-eureka-02</module>-->
         <module>spring-cloud-learning-order-service</module>
         <module>spring-cloud-learning-zuul</module>
+        <module>spring-cloud-learning-student-consumer-feign</module>
     </modules>
 
 
