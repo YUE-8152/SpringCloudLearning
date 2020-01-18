@@ -1,17 +1,16 @@
 server:
-  port: 7001
+  port: 7002
 
 eureka:
   instance:
-    hostname: 192.168.61.1             #eureka服务端的实例名称（localhost）
-    prefer-ip-address: true            #使用 ip 注册到注册中心实例化
+    hostname: 192.168.61.128 #eureka服务端的实例名称
   client:
     register-with-eureka: false     #false表示不向注册中心注册自己。
-    fetch-registry: false           #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/       #(单机 )设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
-      #defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-      defaultZone: http://192.168.61.128:7002/eureka/
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://192.168.61.1:7001/eureka/
   server:
     #是否开启自我保护机制
     #在分布式系统设计里头，通常需要对应用实例的存活进行健康检查，这里比较关键的问题就是要处理好网络偶尔抖动或短暂不可用时造成的误判。
