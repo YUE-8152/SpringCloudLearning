@@ -21,6 +21,9 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+    schema: classpath:sql/schema-mysql.sql                  #自动执行建表sql脚本，如果有多个sql文件，可以用逗号分隔
+    data: classpath:sql/data-mysql.sql                      #自动执行初始化sql脚本
+    #initialization-mode: always                             #Spring Boot2.x 必须添加 initialization-mode配置才会执行，默认为EMBEDDED也就是嵌入式数据库（H2这种），如果要在mysql下执行需要设置成为always
 
 eureka:
   client: #客户端注册进eureka服务列表内

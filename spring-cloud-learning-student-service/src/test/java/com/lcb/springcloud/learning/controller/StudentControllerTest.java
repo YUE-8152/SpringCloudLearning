@@ -36,7 +36,7 @@ public class StudentControllerTest {
     @Test
     public void addStudent() throws Exception {
         SimpleDateFormat  format = new SimpleDateFormat("yyyy-MM-dd");
-        Student student = new Student("BB",21,0,"AAAAAAAAAAA",format.parse("1999-01-07"),"admin","admin");
+        Student student = new Student("CC",21,0,"CCCCCCCC",format.parse("1999-01-07"),"admin","admin");
         mockMvc.perform(MockMvcRequestBuilders.post("/student/add")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(JSON.toJSONString(student)))
